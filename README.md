@@ -23,18 +23,23 @@ One solution is to create an object that contains a reference to each view. This
 You can now replace all calls to findViewById() with references to the views that are in the binding object.
 
 1. Create a data class for your data.
+
 2. Add a <data> block inside the <layout> tag.
+    
 3. Define a <variable> with a name, and a type that is the data class.
       <data>
          <variable
              name="myName"
              type="com.example.android.aboutme.MyName" />
       </data>
+    
 4. In MainActivity, create a variable with an instance of the data class. 
       For example: 
         private val myName: MyName = MyName("Aleks Haecky")
+    
 5. In the binding object, set the variable to the variable you just created: 
       binding.myName = myName
+    
 6. In the XML, set the content of the view to the variable that you defined in the <data> block. Use dot notation to access the data inside the data class.
     android:text="@={myName.name}"
 
