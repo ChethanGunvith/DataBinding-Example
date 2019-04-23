@@ -43,5 +43,4 @@ You can now replace all calls to findViewById() with references to the views tha
 6. In the XML, set the content of the view to the variable that you defined in the <data> block. Use dot notation to access the data inside the data class.
     android:text="@={myName.name}"
 
-https://github.com/googlesamples/android-architecture-components/issues/29
-https://issuetracker.google.com/issues/64988610
+
