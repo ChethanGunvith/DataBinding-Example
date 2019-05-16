@@ -10,10 +10,10 @@
     </data>
 
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".view.MainActivity">
+            tools:context=".view.LoginActivity">
 
         <TextView
                 android:id="@+id/lbUserLoginId"
@@ -23,14 +23,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:lineSpacingExtra="8sp"
-                android:text="User Login ID details"
+                android:text="@{LoginViewModel.email}"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
-
 
 
         <TextView
@@ -41,7 +40,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:lineSpacingExtra="8sp"
-                android:text="User Login ID details"
+                android:text="@{LoginViewModel.password}"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -50,7 +49,23 @@
                 app:layout_constraintTop_toBottomOf="@+id/lbUserLoginId"/>
 
 
-    </android.support.constraint.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/userDetailList"
+                app:layoutManager="LinearLayoutManager"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbUserPasswordInfo"
+                tools:listitem="@layout/data_item"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </layout>
