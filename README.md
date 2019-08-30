@@ -1,24 +1,4 @@
 
-<<<<<<< HEAD
-https://github.com/googlesamples/android-architecture-components/issues/29
-https://issuetracker.google.com/issues/64988610
-
-
-we want to get rid of all that setter logic, that kind of sucks - findviewbyId really is lousy
-
-why should you use DataBinding ?
-
-it gives you type safe.
-compiled time verified replacement to the standard findViewById
-
-
-Two way data binding
-Two-way Data Binding is a technique of binding your objects to your XML layouts so that both the
-object can send data to the layout, and the layout can send data to the object.
-<EditText android:text="@={user.name}"
-
-Inverse binding method
-=======
 You used the findViewById() function to get references to views. When your app has complex view hierarchies, findViewById() is expensive and slows down the app, because Android traverses the view hierarchy, starting at the root, until it finds the desired view. 
 
 In this Example, you learn how to use data binding to eliminate the need for findViewById(). You also learn how to use data binding to access data directly from a view.
@@ -40,28 +20,3 @@ One solution is to create an object that contains a reference to each view. This
 4. You get type safety for accessing views. (Type safety means that the compiler validates types while compiling, and it throws an error if you try to assign the wrong type to a variable.)
 
     
-You can now replace all calls to findViewById() with references to the views that are in the binding object.
-
-1. Create a data class for your data.
-
-2. Add a <data> block inside the <layout> tag.
-    
-3. Define a <variable> with a name, and a type that is the data class.
-      <data>
-         <variable
-             name="myName"
-             type="com.example.android.aboutme.MyName" />
-      </data>
-    
-4. In MainActivity, create a variable with an instance of the data class. 
-      For example: 
-        private val myName: MyName = MyName("Aleks Haecky")
-    
-5. In the binding object, set the variable to the variable you just created: 
-      binding.myName = myName
-    
-6. In the XML, set the content of the view to the variable that you defined in the <data> block. Use dot notation to access the data inside the data class.
-    android:text="@={myName.name}"
-
->>>>>>> 44f840aecadfd22efea0570795f8d5cdf0012aa1
-
