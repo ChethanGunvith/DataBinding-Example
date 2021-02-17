@@ -19,4 +19,24 @@ One solution is to create an object that contains a reference to each view. This
 3. The Android system only traverses the view hierarchy once to get each view, and it happens during app startup, not at runtime when the user is interacting with the app.
 4. You get type safety for accessing views. (Type safety means that the compiler validates types while compiling, and it throws an error if you try to assign the wrong type to a variable.)
 
-    
+
+We are using DataBinding since Jetpack release. Android documentation indicates that ViewBinding was added in Android Studio 3.6 Canary 11+
+We are using DataBinding since Jetpack release. Android documentation indicates that ViewBinding was added in Android Studio 3.6 Canary 11+
+
+
+### ViewBinding
+Only binding views to code.
+
+### DataBinding
+Binding data (from code) to views + ViewBinding (Binding views to code)
+
+
+There are three important differences
+
+- With view binding, the layouts do not need a layout tag
+
+- You can't use viewbinding to bind layouts with data in xml (No binding expressions, no BindingAdapters nor two-way binding with viewbinding)
+
+- The main advantages of viewbinding are speed and efficiency. It has a shorter build time because it avoids the overhead and performance issues associated with databinding due to annotation processors affecting databinding's build time.
+
+In short, there is nothing viewbinding can do that databinding cannot do (though at cost of longer build times) and there are a lot databinding can do that viewbinding can"t
